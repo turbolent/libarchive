@@ -960,7 +960,7 @@ archive_entry_set_atime(struct archive_entry *entry, time_t t, long ns)
 	entry->stat_valid = 0;
 	entry->ae_set |= AE_SET_ATIME;
 	entry->ae_stat.aest_atime = t;
-	entry->ae_stat.aest_atime_nsec = ns;
+	entry->ae_stat.aest_atime_nsec = (uint32_t)ns;
 }
 
 void
@@ -977,7 +977,7 @@ archive_entry_set_birthtime(struct archive_entry *entry, time_t t, long ns)
 	entry->stat_valid = 0;
 	entry->ae_set |= AE_SET_BIRTHTIME;
 	entry->ae_stat.aest_birthtime = t;
-	entry->ae_stat.aest_birthtime_nsec = ns;
+	entry->ae_stat.aest_birthtime_nsec = (uint32_t)ns;
 }
 
 void
@@ -994,7 +994,7 @@ archive_entry_set_ctime(struct archive_entry *entry, time_t t, long ns)
 	entry->stat_valid = 0;
 	entry->ae_set |= AE_SET_CTIME;
 	entry->ae_stat.aest_ctime = t;
-	entry->ae_stat.aest_ctime_nsec = ns;
+	entry->ae_stat.aest_ctime_nsec = (uint32_t)ns;
 }
 
 void

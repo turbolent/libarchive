@@ -53,7 +53,7 @@
 #endif
 
 /* On macOS check for some symbols based on the deployment target version.  */
-#if defined(__APPLE__)
+#if defined(__APPLE__) && TARGET_OS_MAC && !(TARGET_OS_EMBEDDED || TARGET_OS_IPHONE)
 # undef HAVE_FUTIMENS
 # undef HAVE_UTIMENSAT
 # include <AvailabilityMacros.h>

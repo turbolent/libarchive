@@ -137,7 +137,7 @@ aes_ctr_init(archive_crypto_ctx *ctx, const uint8_t *key, size_t key_len)
 {
 	CCCryptorStatus r;
 
-	ctx->key_len = key_len;
+	ctx->key_len = (unsigned)key_len;
 	memcpy(ctx->key, key, key_len);
 	memset(ctx->nonce, 0, sizeof(ctx->nonce));
 	ctx->encr_pos = AES_BLOCK_SIZE;
